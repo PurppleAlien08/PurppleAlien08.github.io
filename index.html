@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="es" itemscope itemtype="http://schema.org/WebPage">
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    
+    <!-- Meta información básica -->
+    <title>Antonio Soria - Matemático y Programador | Especialista en Algoritmos e IA</title>
+    <meta name="description" content="Antonio Soria - Matemático y Programador con experiencia en matemáticas aplicadas, algoritmia, inteligencia artificial y desarrollo de sistemas complejos.">
+    <meta name="keywords" content="matemático, programador, algoritmia, inteligencia artificial, UNAM, UAM, Java, C, Python, desarrollo software, machine learning, análisis de datos">
+    <meta name="author" content="Antonio Soria">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Canonical URL para SEO -->
+    <link rel="canonical" href="https://www.antoniosoria.com/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.antoniosoria.com/">
+    <meta property="og:title" content="Antonio Soria - Matemático y Programador | Especialista en Algoritmos e IA">
+    <meta property="og:description" content="Matemático y Programador con experiencia en matemáticas aplicadas, algoritmia, inteligencia artificial y desarrollo de sistemas complejos.">
+    <meta property="og:image" content="https://www.antoniosoria.com/images/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="es_MX">
+
+    <!-- Esquema JSON-LD para rich snippets -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Antonio Soria",
+      "jobTitle": "Matemático y Programador",
+      "alumniOf": [{
+        "@type": "CollegeOrUniversity",
+        "name": "Universidad Nacional Autónoma de México"
+      }, {
+        "@type": "CollegeOrUniversity",
+        "name": "Universidad Autónoma Metropolitana"
+      }],
+      "hasOccupation": {
+        "@type": "Occupation",
+        "name": "Desarrollador de Software",
+        "skills": "Matemáticas Aplicadas, Algoritmia, Inteligencia Artificial, Java, C, Python"
+      },
+      "url": "https://www.antoniosoria.com",
+      "sameAs": [
+        "https://github.com/antoniosoria",
+        "https://www.linkedin.com/in/antonio-sould-54627195,
+        "https://twitter.com/antoniosoria"
+      ]
+    }
+    </script>
+    
+    <!-- Preconexión para mejorar rendimiento -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Fuentes de Google optimizadas -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400;1,500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,300;0,8..144,400;0,8..144,500;0,8..144,600;0,8..144,700;1,8..144,300;1,8..144,400;1,8..144,500&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- Favicon y iconos para múltiples dispositivos -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#3d85c6">
+    <meta name="msapplication-TileColor" content="#3d85c6">
+    <meta name="theme-color" content="#3d85c6">
+    
+    <!-- CSS Principal -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    
+    <!-- CSS para modo oscuro -->
+    <link rel="stylesheet" href="assets/css/dark-mode.css" media="(prefers-color-scheme: dark)">
+    
+     <!-- Cargar translations.js PRIMERO -->
+    <script src="js/translations.js"></script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+
+    <style>
+    /* ================================================== */
+    /* ESTILOS MEJORADOS PARA LA BARRA SUPERIOR UNIFICADA */
+    /* ================================================== */
+    
+     /* Estructura principal del header */
+    .site-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: rgba(45, 55, 72, 0.95);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        padding: 10px 0;
+    }
+
+    body.dark-mode .site-header {
+        background: rgba(45, 55, 72, 0.95);
+    }
+
+    .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        position: relative;
+    }
+
+    /* Contenedor para logo y botón de menú */
+    .logo-menu-container {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    /* Estilos para el logo */
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        font-family: 'Oswald', sans-serif;
+        font-size: 1.8rem;
+        font-weight: 600;
+        color: var(--text-color);
+    }
+
+    body.dark-mode .logo {
+        color: #e2e8f0;
+    }
+
+    .logo span {
+        color: var(--primary-color);
+        font-weight: 700;
+    }
+
+    .logo-image {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 3px solid var(--primary-color);
+    }
+
+    .logo-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* Estilos para el botón de menú (solo icono) */
+    .dropdown-menu {
+        position: relative;
+    }
+
+    .dropdown-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        color: rgb(255, 255, 255);
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        font-family: 'Oswald', sans-serif;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .dropdown-toggle:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+    }
+
+    .dropdown-toggle i {
+        font-size: 1.4rem;
+    }
+
+    /* Eliminar texto "Menú" */
+    .dropdown-toggle .menu-text {
+        display: none;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 100%;
+        background-color: white;
+        min-width: 220px;
+        box-shadow: var(--shadow-lg);
+        border-radius: var(--border-radius);
+        z-index: 1002;
+        overflow: hidden;
+        margin-top: 10px;
+    }
+
+    .dropdown-content.show {
+        display: block;
+    }
+
+    .dropdown-content a {
+        color: var(--text-color);
+        padding: 15px 20px;
+        text-decoration: none;
+        display: block;
+        transition: var(--transition);
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+        font-family: 'Roboto', sans-serif;
+        font-weight: 500;
+    }
+
+    .dropdown-content a:last-child {
+        border-bottom: none;
+    }
+
+    .dropdown-content a:hover {
+        background-color: var(--primary-color);
+        color: white;
+        padding-left: 25px;
+    }
+
+    /* Modo oscuro para el menú desplegable */
+    body.dark-mode .dropdown-content {
+        background-color: #2d3748;
+        border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    body.dark-mode .dropdown-content a {
+        color: #e2e8f0;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    body.dark-mode .dropdown-content a:hover {
+        background-color: var(--accent-color);
+    }
+
+    /* Estilos para el botón de idioma (esquina derecha) */
+    .language-switcher {
+        position: relative;
+    }
+
+    .language-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        color: white;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        font-family: 'Oswald', sans-serif;
+        font-weight: 500;
+        transition: var(--transition);
+        box-shadow: var(--shadow-md);
+    }
+
+    .language-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-lg);
+    }
+
+    .language-flag {
+        font-size: 1.4rem;
+    }
+
+    /* Ocultar texto del idioma */
+    .language-text {
+        display: none;
+    }
+
+    /* Estilos para modo oscuro */
+    body.dark-mode .language-btn {
+        background: linear-gradient(135deg, var(--accent-color), #5fa8ff);
+    }
+
+    /* Ajustes responsivos */
+    @media (max-width: 992px) {
+        .dropdown-menu {
+            display: block;
+        }
+        
+        .nav-menu {
+            display: none;
+        }
+        
+        .nav-menu.active {
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: var(--dark-color);
+            padding: 80px 20px 20px;
+            z-index: 1000;
+        }
+        
+        .menu-toggle {
+            display: block;
+        }
+    }
+
+    @media (min-width: 993px) {
+        .menu-toggle {
+            display: none;
+        }
+        
+        .nav-menu {
+            display: flex;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .nav-container {
+            padding: 0 15px;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+        }
+        
+        .logo-image {
+            width: 40px;
+            height: 40px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .logo span {
+            display: none;
+        }
+    }
+</style>
+<body>
+    <!-- Header y Navegación CORREGIDO -->
+    <header class="site-header">
+        <div class="nav-container">
+            <!-- Sección izquierda: Botón de menú -->
+            <div class="nav-left">
+                <div class="dropdown-menu">
+                    <button class="dropdown-toggle" id="dropdown-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <div class="dropdown-content" id="dropdown-content">
+                        <a href="index.html">Inicio</a>
+                        <a href="sobre-mi.html">Sobre Mí</a>
+                        <a href="portafolio.html">Portafolio</a>
+                        <a href="divulgacion.html">Divulgación</a>
+                        <a href="contacto.html">Contacto</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sección central: Logo -->
+            <div class="nav-center">
+                <div class="logo">
+                    <div class="logo-image">
+                        <img src="images/mifoto.jpg" alt="Antonio Soria">
+                    </div>
+                    <span class="logo-text">Antonio <span class="logo-highlight">Soria</span></span>
+                </div>
+            </div>
+
+            <!-- Sección derecha: Selector de idioma -->
+            <div class="nav-right">
+                <div class="language-switcher">
+                    <button id="language-toggle" class="language-btn" title="Cambiar idioma">
+                        <span class="language-flag">🇪🇸</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Menú tradicional (se ocultará en móviles) -->
+            <ul class="nav-menu">
+                <li><a href="#home" class="active">Inicio</a></li>
+                <li><a href="#about">Sobre mí</a></li>
+                <li><a href="#skills">Habilidades</a></li>
+                <li><a href="#research">Intereses</a></li>
+                <li><a href="#projects">Proyectos</a></li>
+                <li><a href="#studio">Studio</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+            
+            <div class="menu-toggle">☰</div>
+        </div>
+    </header>
+    
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-header">
+                <div class="profile-circle">
+                    <img src="images/pic01.jpg" alt="Antonio Soria">
+                </div>
+                <h1>Antonio Soria</h1>
+            </div>
+            <p>Matemático y Desarrollador</p>
+            <div class="hero-cta">
+                <a href="#projects" class="btn">Ver Proyectos</a>
+                <a href="#contact" class="btn btn-outline">Contactar</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Mí -->
+    <section class="section" id="about">
+        <h2 class="section-title">Sobre Mí</h2>
+        <div class="about-content">
+            <div class="profile-image fade-in">
+                <img src="images/mifoto.jpg" alt="Antonio Soria - Matemático y Desarrollador">
+            </div>
+            <div class="profile-text fade-in">
+                <p>Soy un matemático y desarrollador con una sólida formación en matemáticas aplicadas y computación. Mi trayectoria académica combina el rigor matemático con la aplicación práctica en el campo de la programación.</p>
+                <p>Mi enfoque profesional integra los principios matemáticos con el desarrollo de software, buscando siempre soluciones eficientes y elegantes para problemas complejos.</p>
+                
+                <div class="timeline">
+                    <div class="timeline-item fade-in">
+                        <span class="date">2011 - 2016</span>
+                        <h3>Programador Profesional</h3>
+                        <p>Desarrollo de software y aplicaciones empresariales</p>
+                    </div>
+                    <div class="timeline-item fade-in">
+                        <span class="date">2016 - 2020</span>
+                        <h3>UNAM FES Acatlán</h3>
+                        <p>Licenciatura en Matemáticas Aplicadas and Computación</p>
+                    </div>
+                    <div class="timeline-item fade-in">
+                        <span class="date">2020 - Presente</span>
+                        <h3>UAM Iztapalapa</h3>
+                        <p>Licenciatura en Computación</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Habilidades -->
+    <section class="section section-dark" id="skills">
+        <h2 class="section-title">Habilidades</h2>
+        <div class="skills-container">
+            <div class="skill-category fade-in">
+                <h3><i class="fas fa-calculator"></i> Matemáticas</h3>
+                <ul class="skill-list">
+                    <li>Análisis Numérico</li>
+                    <li>Teoría de Grafos</li>
+                    <li>Estadística Avanzada</li>
+                    <li>Optimización Matemática</li>
+                    <li>Lógica Proposicional</li>
+                </ul>
+            </div>
+            
+            <div class="skill-category fade-in">
+                <h3><i class="fas fa-code"></i> Programación</h3>
+                <ul class="skill-list">
+                    <li>Java & Algoritmos de IA</li>
+                    <li>Lenguaje C & Sistemas</li>
+                    <li>Python para Análisis</li>
+                    <li>Estructuras de Datos</li>
+                    <li>Algoritmia Avanzada</li>
+                </ul>
+            </div>
+            
+            <div class="skill-category fade-in">
+                <h3><i class="fas fa-brain"></i> Inteligencia Artificial</h3>
+                <ul class="skill-list">
+                    <li>Algoritmos de Búsqueda</li>
+                    <li>BFS, DFS y A*</li>
+                    <li>Minimax y Poda Alfa-Beta</li>
+                    <li>Resolución de Problemas</li>
+                    <li>Lógica Computacional</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Intereses de Investigación -->
+    <section class="section research-interests" id="research">
+        <h2 class="section-title">Intereses Académicos</h2>
+        <ul class="interests-list">
+            <li><i class="fas fa-square-root-alt"></i> Matemáticas</li>
+            <li><i class="fas fa-project-diagram"></i> Algoritmia</li>
+            <li><i class="fas fa-robot"></i> Inteligencia Artificial</li>
+            <li><i class="fas fa-laptop-code"></i> Programación</li>
+            <li><i class="fas fa-network-wired"></i> Teoría de Grafos</li>
+            <li><i class="fas fa-atom"></i> Computación Cuántica</li>
+            <li><i class="fas fa-chart-bar"></i> Análisis de Datos</li>
+            <li><i class="fas fa-cogs"></i> Optimización</li>
+        </ul>
+    </section>
+
+    <!-- Proyectos -->
+    <section class="section section-dark" id="projects">
+        <h2 class="section-title">Proyectos Destacados</h2>
+        <div class="projects-grid">
+            <div class="project-card fade-in">
+                <div class="project-image">
+                    <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Algoritmos de Inteligencia Artificial en Java">
+                </div>
+                <div class="project-content">
+                    <h3>Algoritmos de IA en Java</h3>
+                    <p>Implementación de diversos algoritmos de inteligencia artificial como BFS, DFS, A* y Minimax para resolver problemas complejos.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Java</span>
+                        <span class="project-tag">Algoritmos</span>
+                        <span class="project-tag">IA</span>
+                    </div>
+                    <a href="https://drive.google.com/drive/folders/1tIGRackIqnDKqHiVigs8Qwh7efmi2gYS" class="btn" target="_blank">Ver Código</a>
+                </div>
+            </div>
+            
+            <div class="project-card fade-in">
+                <div class="project-image">
+                    <img src="https://images.unsplash.com/photo-1534723328310-e82dad3ee43f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Sistemas en Lenguaje C">
+                </div>
+                <div class="project-content">
+                    <h3>Desarrollo de Sistemas en C</h3>
+                    <p>Desarrollo de sistemas eficientes y de bajo nivel utilizando lenguaje C para aplicaciones que requieren máximo rendimiento.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Lenguaje C</span>
+                        <span class="project-tag">Optimización</span>
+                        <span class="project-tag">Sistemas</span>
+                    </div>
+                    <a href="#contact" class="btn">Solicitar Demo</a>
+                </div>
+            </div>
+            
+            <div class="project-card fade-in">
+                <div class="project-image">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Algoritmo de Wang">
+                </div>
+                <div class="project-content">
+                    <h3>Algoritmo de Wang para Lógica Proposicional</h3>
+                    <p>Implementación del algoritmo de Wang para demostración automática de teoremas en lógica proposicional.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Java</span>
+                        <span class="project-tag">Lógica</span>
+                        <span class="project-tag">Algoritmos</span>
+                    </div>
+                    <a href="https://drive.google.com/drive/folders/1tIGRackIqnDKqHiVigs8Qwh7efmi2gYS" class="btn" target="_blank">Ver Implementación</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Studio de Desarrollo -->
+    <section class="section studio" id="studio">
+        <h2 class="section-title">Studio de Desarrollo</h2>
+        <p class="studio-description">Transformo ideas en soluciones digitales robustas y elegantes. ¿Tienes una idea? Juntos podemos hacerla realidad.</p>
+        
+        <div class="studio-services">
+            <div class="service-card fade-in">
+                <div class="service-icon">
+                    <i class="fas fa-laptop-code"></i>
+                </div>
+                <h3>Desarrollo Web</h3>
+                <p>Creación de sitios web modernos, responsivos y optimizados para SEO que representen tu marca profesionalmente.</p>
+                <ul class="service-features">
+                    <li>Diseño responsive</li>
+                    <li>Optimización SEO</li>
+                    <li>Integración de APIs</li>
+                    <li>Animaciones modernas</li>
+                </ul>
+            </div>
+            
+            <div class="service-card fade-in">
+                <div class="service-icon">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+                <h3>Aplicaciones Web</h3>
+                <p>Desarrollo de aplicaciones web progresivas (PWA) con funcionalidades avanzadas y experiencia de usuario excepcional.</p>
+                <ul class="service-features">
+                    <li>Aplicaciones progresivas (PWA)</li>
+                    <li>Interfaces intuitivas</li>
+                    <li>Almacenamiento offline</li>
+                    <li>Notificaciones push</li>
+                </ul>
+            </div>
+            
+            <div class="service-card fade-in">
+                <div class="service-icon">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <h3>Soluciones con IA</h3>
+                <p>Implementación de algoritmos de inteligencia artificial y machine learning para resolver problemas complejos.</p>
+                <ul class="service-features">
+                    <li>Algoritmos de recomendación</li>
+                    <li>Procesamiento de lenguaje natural</li>
+                    <li>Análisis predictivo</li>
+                    <li>Computer vision</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="process-section">
+            <h3>¿Cómo trabajamos?</h3>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h4>Consulta</h4>
+                    <p>Analizamos tu idea y requirements para entender completamente el proyecto.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h4>Diseño</h4>
+                    <p>Crearemos wireframes y prototipos para visualizar la solución.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h4>Desarrollo</h4>
+                    <p>Implementamos la solución con las mejores prácticas y tecnologías.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h4>Lanzamiento</h4>
+                    <p>Desplegamos tu aplicación y te proporcionamos soporte continuo.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="cta-section">
+            <h3>¿Listo para comenzar tu proyecto?</h3>
+            <p>Contáctame hoy mismo para una consulta gratuita y un presupuesto personalizado.</p>
+            <div class="studio-cta">
+                <a href="#contact" class="btn btn-large">Solicitar Consulta</a>
+                <a href="mailto:antonio.soria8r@gmail.com" class="btn btn-outline">Enviar Email</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Información de Contacto -->
+    <section class="section contact-info" id="contact">
+        <h2 class="section-title">Contacto</h2>
+        <div class="contact-container">
+            <div class="contact-card fade-in">
+                <i class="fas fa-map-marker-alt"></i>
+                <h3>Ubicación</h3>
+                <p>Ciudad de México, CDMX</p>
+                <p>Instituciones: UNAM, UAM Iztapalapa, UNAM FES Acatlán</p>
+            </div>
+            
+            <div class="contact-card fade-in">
+                <i class="fas fa-envelope"></i>
+                <h3>Email</h3>
+                <p>antonio.soria8r@gmail.com</p>
+                <p>cbi2203041232@izt.uam.mx</p>
+                <a href="mailto:antonio.soria8r@gmail.com" class="btn">Enviar mensaje</a>
+                
+                <div class="whatsapp-contact">
+                    <p>WhatsApp: +52 5554646553</p>
+                    <a href="https://wa.me/525554646553?text=Hola%20Antonio,%20me%20interesa%20ponerme%20en%20contacto%20contigo" 
+                       class="btn btn-whatsapp" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Enviar WhatsApp
+                    </a>
+                </div>
+            </div>
+            
+            <div class="contact-card fade-in">
+                <i class="fas fa-file-pdf"></i>
+                <h3>Currículum</h3>
+                <p>Descarga mi CV completo para más detalles profesionales</p>
+                <a href="doc/curriculum.pdf" class="btn" target="_blank" style="background: linear-gradient(135deg, #d93025, #ea4335); margin-top: 15px;">
+                    <i class="fas fa-download"></i> Descargar CV
+                </a>
+                <p style="margin-top: 10px; font-size: 0.9rem; color: var(--text-light);">
+                    <i class="fas fa-info-circle"></i> Documento actualizado
+                </p>
+            </div>
+            
+            <div class="contact-card fade-in">
+                <i class="fas fa-share-alt"></i>
+                <h3>Redes Sociales</h3>
+                <p>Conectemos en las redes profesionales</p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/antonio-sould-54627195/" class="social-link" title="LinkedIn" target="_blank">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com/PurppleAlien" class="social-link" title="GitHub" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.instagram.com/antoniosould/" class="social-link" title="Instagram" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="mailto:antonio.soria8r@gmail.com" class="social-link" title="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="https://wa.me/525554646553?text=Hola%20Antonio,%20me%20interesa%20ponerme%20en%20contacto%20contigo" 
+                       class="social-link" title="WhatsApp" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filosofía -->
+    <section class="philosophy">
+        <h2 class="section-title">Mi Filosofía</h2>
+        <p style="text-align: center; margin-bottom: 50px; font-style: italic;">Me inspira el pensamiento de Claude Shannon:</p>
+        <ul class="axioms">
+            <li>La información es la resolución de la incertidumbre, and las matemáticas son el lenguaje perfecto para cuantificarla.</li>
+            <li>Los problemas complejos del mundo real a menudo tienen soluciones elegantes cuando se abordan desde múltiples perspectivas: matemáticas, código y teoría de la información.</li>
+            <li>La belleza de un algoritmo no solo está en su eficiencia, sino en cómo modela y resuelve problemas del mundo físico.</li>
+            <li>El universo mismo puede entenderse como un sistema de procesamiento de información, donde las matemáticas son tanto el lenguaje como el mecanismo.</li>
+        </ul>
+        
+        <div class="quote">
+            Visualizo un día en el que volaremos sobre un mundo en el que los seres humanos sean libres de la monotonía y vivan la vida como debería vivirse
+            <span class="quote-author">- Claude Shannon, padre de la teoría de la información</span>
+        </div>
+    </section>
+
+    <!-- Footer -->
+      <footer>
+        <div class="footer-content">
+            <div class="logo">Antonio <span>Soria</span></div>
+            <div class="footer-links">
+                <a href="#home">Inicio</a>
+                <a href="#about">Sobre mí</a>
+                <a href="#skills">Habilidades</a>
+                <a href="#research">Intereses</a>
+                <a href="#projects">Proyectos</a>
+                <a href="#studio">Studio</a>
+                <a href="#contact">Contacto</a>
+            </div>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/antonio-sould-54627195" class="social-link" title="LinkedIn" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://github.com/PurppleAlien" class="social-link" title="GitHub" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.instagram.com/antoniosould/" class="social-link" title="Instagram" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="mailto:antonio.soria8r@gmail.com" class="social-link" title="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="https://wa.me/525554646553?text=Hola%20Antonio,%20me%20interesa%20ponerme%20en%20contacto%20contigo" 
+                   class="social-link" title="WhatsApp" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+            <div class="copyright">
+                &copy; 2023-2025 Antonio Soria. Todos los derechos reservados.
+            </div>
+        </div>
+    </footer>
+
+   <!-- Botón flotante de WhatsApp -->
+    <a href="https://wa.me/525554646553?text=Hola%20Antonio,%20me%20interesa%20ponerme%20en%20contacto%20contigo" 
+       class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Selector de modo claro/oscuro -->
+    <div class="theme-switcher">
+        <button id="theme-toggle" class="theme-btn" title="Cambiar tema">
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun"></i>
+        </button>
+    </div>
+
+    <!-- CARGAR translations.js de forma ASÍNCRONA para evitar bloqueos -->
+    <script src="js/translations.js"></script>
+
+    <!-- CARGAR main.js con defer para asegurar que translations.js cargue primero -->
+    <script src="js/main.js"></script>
+
+    <!-- Script de diagnóstico para verificar la carga -->
+    <script>
+    // Verificar que las traducciones se cargaron correctamente
+    function checkTranslationsLoaded() {
+        if (typeof translations !== 'undefined' && typeof elementsToTranslate !== 'undefined') {
+            console.log('✅ translations.js cargado correctamente');
+            console.log('Idiomas disponibles:', Object.keys(translations));
+            console.log('Elementos a traducir:', elementsToTranslate);
+        } else {
+            console.log('❌ translations.js NO se cargó correctamente');
+            console.log('Translations:', typeof translations);
+            console.log('Elements to translate:', typeof elementsToTranslate);
+            
+            // Recargar la página si las traducciones no se cargaron después de 2 segundos
+            setTimeout(function() {
+                if (typeof translations === 'undefined') {
+                    console.log('Recargando página para cargar traducciones...');
+                    window.location.reload();
+                }
+            }, 2000);
+        }
+    }
+
+    // Esperar a que la página cargue completamente
+    window.addEventListener('load', function() {
+        // Verificar después de un breve delay
+        setTimeout(checkTranslationsLoaded, 100);
+    });
+    </script>
+</body>
+</html>

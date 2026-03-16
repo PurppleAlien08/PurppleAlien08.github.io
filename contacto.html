@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Antonio Soria | Matemático y Desarrollador</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="shared-styles.css">
+    <style>
+        /* Estilos específicos para la página de contacto */
+        .contact-hero {
+            padding: 100px 0 80px;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(61, 133, 198, 0.1) 0%, rgba(95, 168, 255, 0.1) 100%);
+            border-radius: 20px;
+            margin-bottom: 60px;
+        }
+
+        .contact-hero h1 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .contact-hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            color: var(--text-color);
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .contact-card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .contact-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .contact-card h3 {
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .contact-info {
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            margin-bottom: 8px;
+        }
+
+        .btn-whatsapp {
+            background: #25D366;
+            color: white;
+        }
+
+        .btn-whatsapp:hover {
+            background: #128C7E;
+            transform: translateY(-2px);
+        }
+
+        .btn-email {
+            background: #EA4335;
+            color: white;
+        }
+
+        .btn-email:hover {
+            background: #D93025;
+            transform: translateY(-2px);
+        }
+
+        .btn-calendar {
+            background: #FBBC05;
+            color: white;
+        }
+
+        .btn-calendar:hover {
+            background: #F29900;
+            transform: translateY(-2px);
+        }
+
+
+        .schedule-section {
+        padding: 60px 0;
+        background: linear-gradient(135deg, rgba(61, 133, 198, 0.05) 0%, rgba(95, 168, 255, 0.05) 100%);
+        border-radius: 20px;
+        margin-bottom: 60px; /* en lugar de margin: 60px 0 */
+    }
+
+
+        .schedule-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .schedule-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .schedule-option {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+
+        .schedule-option:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .schedule-option h4 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .schedule-option ul {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .schedule-option li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .schedule-option li:before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+        }
+
+        .video-call {
+            text-align: center;
+            padding: 60px 0;
+        }
+
+        .video-call-image {
+            max-width: 100%;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-hover);
+            margin: 30px 0;
+            transition: var(--transition);
+        }
+
+        .video-call-image:hover {
+            transform: scale(1.02);
+        }
+
+        .availability {
+            display: inline-block;
+            padding: 5px 15px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-top: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .contact-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .schedule-options {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-image">
+                    <img src="images/mifoto.jpg" alt="Antonio Soria">
+                </div>
+                <span class="logo-text">Antonio <span>Soria</span></span>
+            </a>
+
+            <ul class="nav-menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="sobre-mi.html">Sobre Mí</a></li>
+                <li><a href="portafolio.html">Portafolio</a></li>
+                <li><a href="divulgacion.html">Divulgación</a></li>
+                <li><a href="contacto.html" class="active">Contacto</a></li>
+            </ul>
+
+            <div class="header-buttons">
+                <button class="theme-btn" id="theme-toggle" title="Cambiar tema">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="language-btn" id="language-toggle" title="Cambiar idioma">
+                    <i class="fas fa-globe"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="contact-hero container fade-in">
+            <h1>Hablemos</h1>
+            <p>Estoy disponible para colaboraciones, proyectos interesantes y conversaciones sobre matemáticas, programación e inteligencia artificial. No dudes en contactarme.</p>
+        </section>
+
+        <!-- Contact Cards -->
+        <section class="container">
+            <div class="contact-container">
+                <div class="contact-card fade-in">
+                    <div class="contact-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <h3>WhatsApp</h3>
+                    <div class="contact-info">
+                        <p><strong>+52 55 5464 6553</strong></p>
+                        <p>Respuesta rápida, ideal para comunicación inmediata</p>
+                    </div>
+                    <a href="https://wa.me/525554646553?text=Hola%20Antonio,%20me%20interesa%20ponerme%20en%20contacto%20contigo" 
+                       class="btn btn-whatsapp" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Enviar mensaje
+                    </a>
+                </div>
+
+                <div class="contact-card fade-in delay-1">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email</h3>
+                    <div class="contact-info">
+                        <p><strong>antonio.soria8r@gmail.com</strong></p>
+                        <p>cbi2203041232@izt.uam.mx</p>
+                        <p>Para propuestas formales y documentación</p>
+                    </div>
+                    <a href="mailto:antonio.soria8r@gmail.com" class="btn btn-email">
+                        <i class="fas fa-paper-plane"></i> Enviar email
+                    </a>
+                </div>
+
+                <div class="contact-card fade-in delay-2">
+                    <div class="contact-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3>Currículum</h3>
+                    <div class="contact-info">
+                        <p>Descarga mi CV actualizado</p>
+                        <p>Información profesional detallada</p>
+                    </div>
+                    <a href="documents/curriculum.pdf" class="btn" target="_blank" style="background: linear-gradient(135deg, #3d85c6, #5fa8ff);">
+                        <i class="fas fa-download"></i> Descargar CV
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Video Call Section -->
+        <section class="video-call container">
+            <h2 class="section-title">Videollamada Profesional</h2>
+            <p>Agenda una sesión de videollamada para discutir proyectos, asesorías o colaboraciones</p>
+            
+            <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                 alt="Videollamada profesional" class="video-call-image">
+            
+            <div class="schedule-options">
+                <div class="schedule-option fade-in">
+                    <h4><i class="fas fa-lightbulb"></i> Consultoría</h4>
+                    <ul>
+                        <li>Asesoría en algoritmos y matemáticas</li>
+                        <li>Análisis de proyectos técnicos</li>
+                        <li>Soluciones personalizadas</li>
+                    </ul>
+                    <a href="https://calendly.com/antonio-soria/consultoria" class="btn btn-calendar" target="_blank">
+                        <i class="fas fa-calendar-check"></i> Agendar consultoría
+                    </a>
+                </div>
+                
+                <div class="schedule-option fade-in delay-1">
+                    <h4><i class="fas fa-code"></i> Desarrollo</h4>
+                    <ul>
+                        <li>Discusión de proyectos de desarrollo</li>
+                        <li>Análisis de requerimientos técnicos</li>
+                        <li>Presupuestos y tiempos de entrega</li>
+                    </ul>
+                    <a href="https://calendly.com/antonio-soria/desarrollo" class="btn btn-calendar" target="_blank">
+                        <i class="fas fa-calendar-check"></i> Agendar reunión
+                    </a>
+                </div>
+                
+                <div class="schedule-option fade-in delay-2">
+                    <h4><i class="fas fa-graduation-cap"></i> Asesoría Académica</h4>
+                    <ul>
+                        <li>Asesoría en matemáticas y programación</li>
+                        <li>Revisión de proyectos académicos</li>
+                        <li>Orientación profesional</li>
+                    </ul>
+                    <a href="https://calendly.com/antonio-soria/asesoria" class="btn btn-calendar" target="_blank">
+                        <i class="fas fa-calendar-check"></i> Agendar asesoría
+                    </a>
+                </div>
+            </div>
+            
+            <div class="availability">
+                <i class="fas fa-clock"></i> Disponibilidad: Lunes a Viernes, 9:00 AM - 6:00 PM
+            </div>
+        </section>
+
+        <!-- Schedule Section -->
+        <section class="schedule-section container">
+            <div class="schedule-content">
+                <h2 class="section-title">Proceso de Colaboración</h2>
+                <p>Mi enfoque para asegurar que nuestras colaboraciones sean productivas y exitosas:</p>
+                
+                <div class="schedule-options">
+                    <div class="schedule-option">
+                        <h4><i class="fas fa-comments"></i> 1. Consulta Inicial</h4>
+                        <p>Discutimos tus necesidades, objetivos y expectativas para el proyecto.</p>
+                    </div>
+                    
+                    <div class="schedule-option">
+                        <h4><i class="fas fa-lightbulb"></i> 2. Propuesta</h4>
+                        <p>Te presento un plan detallado con soluciones, timeline y presupuesto.</p>
+                    </div>
+                    
+                    <div class="schedule-option">
+                        <h4><i class="fas fa-handshake"></i> 3. Colaboración</h4>
+                        <p>Trabajamos juntos con comunicación constante y updates regulares.</p>
+                    </div>
+                    
+                    <div class="schedule-option">
+                        <h4><i class="fas fa-check-circle"></i> 4. Entrega</h4>
+                        <p>Revisión final y entrega del proyecto completo con documentación.</p>
+                    </div>
+                </div>
+                
+                <a href="mailto:antonio.soria8r@gmail.com" class="btn btn-large" style="margin-top: 30px;">
+                    <i class="fas fa-paper-plane"></i> Iniciar conversación
+                </a>
+            </div>
+        </section>
+
+        <!-- Social Links -->
+        <section class="container">
+            <h2 class="section-title">Conectemos</h2>
+            <div class="social-links" style="justify-content: center; margin: 40px 0;">
+                <a href="https://www.linkedin.com/in/antonio-sould-54627195/" class="social-link" title="LinkedIn" target="_blank">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://github.com/PurppleAlien" class="social-link" title="GitHub" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.instagram.com/antoniosould/" class="social-link" title="Instagram" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="mailto:antonio.soria8r@gmail.com" class="social-link" title="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="logo">Antonio <span>Soria</span></div>
+            <div class="footer-links">
+                <a href="index.html">Inicio</a>
+                <a href="sobre-mi.html">Sobre Mí</a>
+                <a href="portafolio.html">Portafolio</a>
+                <a href="divulgacion.html">Divulgación</a>
+                <a href="contacto.html">Contacto</a>
+            </div>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/antonio-sould-54627195" class="social-link" title="LinkedIn" target="_blank">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://github.com/PurppleAlien" class="social-link" title="GitHub" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.instagram.com/antoniosould/" class="social-link" title="Instagram" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="mailto:antonio.soria8r@gmail.com" class="social-link" title="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+            <div class="copyright">
+                &copy; 2023 Antonio Soria. Todos los derechos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Funcionalidad para el modo oscuro/claro
+        function initTheme() {
+            const darkModeSelected = localStorage.getItem('darkMode') === 'true';
+            const themeBtn = document.getElementById('theme-toggle');
+            
+            if (darkModeSelected) {
+                document.body.classList.add('dark-mode');
+                themeBtn.innerHTML = '<i class="fas fa-sun"></i>';
+            } else {
+                document.body.classList.remove('dark-mode');
+                themeBtn.innerHTML = '<i class="fas fa-moon"></i>';
+            }
+            
+            themeBtn.addEventListener('click', () => {
+                document.body.classList.toggle('dark-mode');
+                const isDarkMode = document.body.classList.contains('dark-mode');
+                localStorage.setItem('darkMode', isDarkMode);
+                
+                if (isDarkMode) {
+                    themeBtn.innerHTML = '<i class="fas fa-sun"></i>';
+                } else {
+                    themeBtn.innerHTML = '<i class="fas fa-moon"></i>';
+                }
+            });
+        }
+
+        // Inicializar cuando el DOM esté listo
+        document.addEventListener('DOMContentLoaded', () => {
+            initTheme();
+            
+            // Animación de elementos al hacer scroll
+            const animateOnScroll = () => {
+                const elements = document.querySelectorAll('.fade-in');
+                elements.forEach(element => {
+                    const position = element.getBoundingClientRect().top;
+                    const screenPosition = window.innerHeight / 1.3;
+                    if (position < screenPosition) {
+                        element.style.animationPlayState = 'running';
+                    }
+                });
+            };
+
+            window.addEventListener('scroll', animateOnScroll);
+            animateOnScroll(); // Ejecutar una vez al cargar
+        });
+    </script>
+</body>
+</html>

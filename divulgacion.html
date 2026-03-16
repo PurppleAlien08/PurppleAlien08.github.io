@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divulgación Científica - Antonio Soria</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400;1,500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #3d85c6;
+            --secondary-color: #5fa8ff;
+            --accent-color: #6fa8dc;
+            --text-color: #2d3748;
+            --bg-color: #ffffff;
+            --card-bg: #f7f9fc;
+            --border-color: #e2e8f0;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+            --transition: all 0.3s ease;
+        }
+
+        .dark-mode {
+            --text-color: #e2e8f0;
+            --bg-color: #1a202c;
+            --card-bg: #2d3748;
+            --border-color: #4a5568;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: var(--transition);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            padding: 15px 0;
+        }
+
+        .dark-mode .site-header {
+            background: rgba(45, 55, 72, 0.95);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--text-color);
+            text-decoration: none;
+        }
+
+        .dark-mode .logo {
+            color: #e2e8f0;
+        }
+
+        .logo span {
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        .logo-image {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid var(--primary-color);
+        }
+
+        .logo-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-menu a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .nav-menu a:hover:after {
+            width: 100%;
+        }
+
+        .header-buttons {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .theme-btn, .language-btn {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-color);
+            transition: var(--transition);
+        }
+
+        .theme-btn:hover, .language-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        /* Main Content */
+        .main-content {
+            padding-top: 100px;
+        }
+
+        /* Hero Section */
+        .divulgacion-hero {
+            padding: 80px 0;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(61, 133, 198, 0.1) 0%, rgba(95, 168, 255, 0.1) 100%);
+            border-radius: 20px;
+            margin-bottom: 60px;
+        }
+
+        .divulgacion-hero h1 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .divulgacion-hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            color: var(--text-color);
+        }
+
+        /* Articles Section */
+        .articles-section {
+            padding: 40px 0 80px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-family: 'Oswald', sans-serif;
+            font-size: 2.5rem;
+            position: relative;
+        }
+
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            margin: 15px auto;
+            border-radius: 2px;
+        }
+
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .article-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid var(--border-color);
+        }
+
+        .article-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .dark-mode .article-card:hover {
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .article-image {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .article-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .article-card:hover .article-image img {
+            transform: scale(1.05);
+        }
+
+        .article-content {
+            padding: 25px;
+        }
+
+        .article-category {
+            display: inline-block;
+            padding: 5px 12px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-bottom: 15px;
+        }
+
+        .article-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--text-color);
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+            color: var(--text-color);
+            opacity: 0.8;
+        }
+
+        .article-description {
+            margin-bottom: 20px;
+            color: var(--text-color);
+            opacity: 0.9;
+        }
+
+        .article-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .article-tag {
+            padding: 5px 10px;
+            background: var(--bg-color);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-size: 0.8rem;
+            color: var(--text-color);
+        }
+
+        .article-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: var(--transition);
+            text-decoration: none;
+            text-align: center;
+            flex: 1;
+        }
+
+        .btn:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        
+        /* Resources Section - SOLUCIÓN CON FLEXBOX */
+        .resources-section {
+            padding: 80px 0;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(61, 133, 198, 0.05) 0%, rgba(95, 168, 255, 0.05) 100%);
+            border-radius: 20px;
+            margin-bottom: 60px 0;
+        }
+
+        .resources-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+        .resource-item {
+        text-align: center;
+        padding: 30px;
+        background: var(--card-bg);
+        border-radius: 12px;
+        box-shadow: var(--shadow);
+        border: 1px solid var(--border-color);
+        transition: var(--transition);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 250px;
+        flex: 0 0 auto;
+    }
+
+        .resource-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .resource-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .resource-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--text-color);
+        }
+
+        .resource-description {
+            color: var(--text-color);
+            opacity: 0.8;
+            line-height: 1.5;
+        }
+
+        /* Table Section */
+        .table-section {
+            padding: 60px 0;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .comparison-table th, .comparison-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .comparison-table th {
+            background: var(--primary-color);
+            color: white;
+            font-family: 'Oswald', sans-serif;
+            font-weight: 500;
+        }
+
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .comparison-table tr:hover {
+            background: rgba(61, 133, 198, 0.1);
+        }
+
+        
+
+         /* Did You Know Section - SOLUCIÓN CON FLEXBOX */
+        .did-you-know {
+        padding: 80px 0;
+        text-align: center;
+        background: linear-gradient(135deg, rgba(61, 133, 198, 0.1) 0%, rgba(95, 168, 255, 0.1) 100%);
+        border-radius: 20px;
+        margin-bottom: 60px 0;
+    }
+
+        .fun-facts {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 25px;
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .fun-fact {
+        background: var(--card-bg);
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: var(--shadow);
+        border: 1px solid var(--border-color);
+        transition: var(--transition);
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+        flex: 0 0 auto;
+    }
+
+        .fun-fact:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .fun-fact-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .fun-fact-content h3 {
+            font-family: 'Oswald', sans-serif;
+            margin-bottom: 10px;
+            color: var(--text-color);
+            text-align: center;
+        }
+
+        .fun-fact-content p {
+            text-align: center;
+            line-height: 1.5;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--card-bg);
+            padding: 60px 0 30px;
+            margin-top: 60px;
+            border-top: 1px solid var(--border-color);
+            width: 100%;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .footer-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        .social-link {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--bg-color);
+            color: var(--text-color);
+            transition: var(--transition);
+            text-decoration: none;
+            border: 1px solid var(--border-color);
+        }
+
+        .social-link:hover {
+            transform: translateY(-3px);
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .copyright {
+            margin-top: 30px;
+            color: var(--text-color);
+            opacity: 0.8;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .articles-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+            
+            .nav-menu {
+                display: none;
+            }
+            
+            .divulgacion-hero h1 {
+                font-size: 2.8rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .divulgacion-hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .articles-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .resources-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                padding: 0 15px;
+            }
+            
+            .resource-item {
+                padding: 20px;
+            }
+            
+            .fun-facts {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                padding: 0 15px;
+            }
+            
+            .fun-fact {
+                padding: 20px;
+            }
+            
+            .comparison-table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease forwards;
+        }
+
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-image">
+                    <img src="images/mifoto.jpg" alt="Antonio Soria">
+                </div>
+                <span class="logo-text">Antonio <span>Soria</span></span>
+            </a>
+
+            <ul class="nav-menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="sobre-mi.html">Sobre Mí</a></li>
+                <li><a href="portafolio.html">Portafolio</a></li>
+                <li><a href="divulgacion.html" class="active">Divulgación</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+
+            <div class="header-buttons">
+                <button class="theme-btn" id="theme-toggle" title="Cambiar tema">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="language-btn" id="language-toggle" title="Cambiar idioma">
+                    <i class="fas fa-globe"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="divulgacion-hero container fade-in">
+            <h1>Divulgación Científica</h1>
+            <p>Explora los avances más fascinantes en matemáticas, programación, inteligencia artificial y ciencias a través de artículos de divulgación seleccionados para mentes curiosas.</p>
+        </section>
+
+        <!-- Articles Section -->
+        <section class="articles-section container">
+            <h2 class="section-title">Artículos Destacados</h2>
+            <div class="articles-grid">
+                <!-- Article 1 - MONTECARLO (RUTA LOCAL) -->
+                <div class="article-card fade-in" data-category="matematicas programacion">
+                    <div class="article-image">
+                        <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Método Monte Carlo">
+                    </div>
+                    <div class="article-content">
+                        <span class="article-category">Matemáticas Aplicadas</span>
+                        <h3 class="article-title">El Método Monte Carlo: Simulaciones para Estimación de π</h3>
+                        <div class="article-meta">
+                            <span><i class="far fa-calendar"></i> 20 Ago 2025</span>
+                            <span><i class="far fa-clock"></i> 5 min lectura</span>
+                        </div>
+                        <p class="article-description">
+                            El método Monte Carlo, llamado así por el famoso casino de Mónaco, es una técnica computacional que utiliza muestreo aleatorio para resolver problemas matemáticos complejos.
+                        </p>
+                        <div class="article-tags">
+                            <span class="article-tag">Matemáticas</span>
+                            <span class="article-tag">Simulación</span>
+                            <span class="article-tag">Python</span>
+                        </div>
+                        <div class="article-actions">
+                            <a href="doc/SIMULACION DE MONTECARLO V1_0.pdf" class="btn" target="_blank">Leer Artículo</a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Article 2 - LLM (URL EXTERNA) -->
+                <div class="article-card fade-in delay-1" data-category="ia programacion">
+                    <div class="article-image">
+                        <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Modelos de Lenguaje">
+                    </div>
+                    <div class="article-content">
+                        <span class="article-category">Inteligencia Artificial</span>
+                        <h3 class="article-title">Modelos de Lenguaje de Gran Tamaño (LLMs)</h3>
+                        <div class="article-meta">
+                            <span><i class="far fa-calendar"></i> 15 Ago 2025</span>
+                            <span><i class="far fa-clock"></i> 8 min lectura</span>
+                        </div>
+                        <p class="article-description">
+                            Los Large Language Models (LLMs) como GPT-4, Claude 2 y LLaMA están transformando radicalmente nuestra interacción con la tecnología.
+                        </p>
+                        <div class="article-tags">
+                            <span class="article-tag">IA</span>
+                            <span class="article-tag">LLM</span>
+                            <span class="article-tag">NLP</span>
+                        </div>
+                        <div class="article-actions">
+                            <a href="https://www.researchgate.net/profile/Jhonatan-Correa-5/publication/401718555_YO_LA_INTELIGENCIA_ARTIFICIAL_EXPLICANDOME_A_MI_MISMA/links/69af8065bff9750ad9ca970a/YO-LA-INTELIGENCIA-ARTIFICIAL-EXPLICANDOME-A-MI-MISMA.pdf" class="btn" target="_blank">Leer Artículo</a>
+                           
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Article 3 - SIMILITUDES (URL EXTERNA) -->
+                <div class="article-card fade-in delay-2" data-category="programacion">
+                    <div class="article-image">
+                        <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Lenguajes de Programación">
+                    </div>
+                    <div class="article-content">
+                        <span class="article-category">Programación</span>
+                        <h3 class="article-title">Similitudes y Congruencias de Lenguajes de Programación</h3>
+                        <div class="article-meta">
+                            <span><i class="far fa-calendar"></i> 10 Ago 2025</span>
+                            <span><i class="far fa-clock"></i> 6 min lectura</span>
+                        </div>
+                        <p class="article-description">
+                            Un estudio reciente analiza las similitudes entre lenguajes de programación para desarrollo de aplicaciones móviles Android.
+                        </p>
+                        <div class="article-tags">
+                            <span class="article-tag">Programación</span>
+                            <span class="article-tag">Kotlin</span>
+                            <span class="article-tag">Java</span>
+                        </div>
+                        <div class="article-actions">
+                            <a href="https://ve.scielo.org/scielo.php?pid=S2960-24672024000100304&script=sci_arttext" class="btn" target="_blank">Leer Artículo</a>
+                          
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- Article 4 - APLICACIONES COTIDIANAS (CON IMAGEN) -->
+                <div class="article-card fade-in" data-category="matematicas educacion">
+                    <div class="article-image">
+                        <img src="https://images.unsplash.com/photo-1509228468518-180dd4864904?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Aplicaciones Matemáticas">
+                    </div>
+                    <div class="article-content">
+                        <span class="article-category">Matemáticas</span>
+                        <h3 class="article-title">Aplicaciones Cotidianas de las Matemáticas</h3>
+                        <div class="article-meta">
+                            <span><i class="far fa-calendar"></i> 5 Ago 2025</span>
+                            <span><i class="far fa-clock"></i> 7 min lectura</span>
+                        </div>
+                        <p class="article-description">
+                            Las matemáticas no son solo una disciplina abstracta, sino que tienen un papel fundamental en nuestra vida diaria.
+                        </p>
+                        <div class="article-tags">
+                            <span class="article-tag">Matemáticas</span>
+                            <span class="article-tag">Educación</span>
+                            <span class="article-tag">Aplicaciones</span>
+                        </div>
+                        <div class="article-actions">
+                            <a href="https://www.revistasocialfronteriza.com/ojs/index.php/rev/article/view/320" class="btn" target="_blank">Leer Artículo</a>
+                           
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Article 5 - MUJERES PIONERAS (RUTA LOCAL) -->
+                <div class="article-card fade-in delay-1" data-category="historia ciencia">
+                    <div class="article-image">
+                        <img src="https://images.unsplash.com/photo-1576086213369-97a306d36557?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Mujeres en Ciencia">
+                    </div>
+                    <div class="article-content">
+                        <span class="article-category">Historia de la Ciencia</span>
+                        <h3 class="article-title">Mujeres Pioneras en Matemáticas y Programación</h3>
+                        <div class="article-meta">
+                            <span><i class="far fa-calendar"></i> 1 Ago 2025</span>
+                            <span><i class="far fa-clock"></i> 10 min lectura</span>
+                        </div>
+                        <p class="article-description">
+                            Marta Macho-Stadler, matemática e investigadora, destaca en su libro el papel crucial que jugaron las mujeres matemáticas en los inicios de la programación.
+                        </p>
+                        <div class="article-tags">
+                            <span class="article-tag">Historia</span>
+                            <span class="article-tag">Mujeres</span>
+                            <span class="article-tag">Ciencia</span>
+                        </div>
+                        <div class="article-actions">
+                            <a href="doc/Mujeres_Pioneras_programacion.pdf" class="btn" target="_blank">Leer Artículo</a>
+                           
+                        </div>
+                    </div>
+                </div>
+
+                
+
+
+            <!-- Article 6 - TEORÍA DE JUEGOS (CON IMAGEN) -->
+                <div class="article-card fade-in delay-2" data-category="matematicas teoria">
+                    <div class="article-image">
+                        <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Teoría de Juegos">
+                    </div>
+                    <div class="article-content">
+                        <span class="article-category">Matemáticas</span>
+                        <h3 class="article-title">La Teoría de Juegos y la Matemática</h3>
+                        <div class="article-meta">
+                            <span><i class="far fa-calendar"></i> 28 Jul 2025</span>
+                            <span><i class="far fa-clock"></i> 8 min lectura</span>
+                        </div>
+                        <p class="article-description">
+                            La teoría de juegos es una rama de las matemáticas que estudia las interacciones estratégicas entre agentes racionales, con aplicaciones en economía, biología, ciencias sociales e inteligencia artificial.
+                        </p>
+                        <div class="article-tags">
+                            <span class="article-tag">Teoría de Juegos</span>
+                            <span class="article-tag">Matemáticas</span>
+                            <span class="article-tag">Estrategia</span>
+                        </div>
+                        <div class="article-actions">
+                            <a href="https://d1wqtxts1xzle7.cloudfront.net/89582501/185275625-libre.pdf?1660403585=&response-content-disposition=inline%3B+filename%3DLa_teoria_de_juegos_y_la_matematica.pdf&Expires=1773623724&Signature=Bvxe5E3RcM0zLREbi4N4gS9aTQ34lhfWPEt-KNot-1Tnu0F-CSM6GhCazLodi4w7OihoIqy3~9UDibxCJFrO57JG4D1jrS3490I9G1ySfAokphz8DqX22twDgmJgXWRUO5wUQUfcdfdVof1bk6X0t0ee7Ndh-6VEhwT7cc8J-K9iOt-R7~BIgBuUF6HyfiO9mwQj5O5bGX8tIAGS4KX6tlSQUkboQit6JfDMP-ua3uYmrHyNCVM0YVwY399WXCyTqh0Bwx3xGaunVMSPeYrRiDq~Ud0FB2uMZ7G~pGxWob5y6oNNujs7UdcQ43QP0AptrKzcgPMoiVQbM-D8x2PNOg__&Key-Pair-Id=APKAJLOHF5GGSLRBV4ZA" class="btn" target="_blank">Leer Artículo</a>
+                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+        </section>
+
+        <!-- Resources Section -->
+        <section class="resources-section container">
+            <h2 class="section-title">Recursos Recomendados</h2>
+            <div class="resources-grid">
+                <div class="resource-item fade-in">
+                    <div class="resource-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3 class="resource-title">Revistas de Divulgación</h3>
+                    <p class="resource-description">Scientific American, Investigación y Ciencia, Nature</p>
+                </div>
+                
+                <div class="resource-item fade-in delay-1">
+                    <div class="resource-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="resource-title">Plataformas Educativas</h3>
+                    <p class="resource-description">Khan Academy, Coursera, edX</p>
+                </div>
+                
+                <div class="resource-item fade-in delay-2">
+                    <div class="resource-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3 class="resource-title">Canales YouTube</h3>
+                    <p class="resource-description">3Blue1Brown, Veritasium, Numberphile</p>
+                </div>
+                
+                <div class="resource-item fade-in delay-3">
+                    <div class="resource-icon">
+                        <i class="fas fa-microphone-alt"></i>
+                    </div>
+                    <h3 class="resource-title">Podcasts Científicos</h3>
+                    <p class="resource-description">Radio Skylab, Coffee Break, La Brújula de la Ciencia</p>
+                </div>
+            </div>
+        </section>
+
+                <!-- Table Section -->
+        <section class="table-section container">
+            <h2 class="section-title">Modelos LLM y sus Aplicaciones</h2>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Modelo</th>
+                        <th>Parámetros</th>
+                        <th>Aplicaciones Principales</th>
+                        <th>Lenguajes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>GPT-4</td>
+                        <td>1.7 billones</td>
+                        <td>Generación de texto, respuesta a preguntas</td>
+                        <td>Multilenguaje</td>
+                    </tr>
+                    <tr>
+                        <td>Claude 2</td>
+                        <td>No especificado</td>
+                        <td>Procesamiento de documentación extensa</td>
+                        <td>Inglés, Español</td>
+                    </tr>
+                    <tr>
+                        <td>Cohere Command</td>
+                        <td>No especificado</td>
+                        <td>Generación de contenido, clasificación</td>
+                        <td>100+ lenguajes</td>
+                    </tr>
+                    <tr>
+                        <td>Jurassic-1</td>
+                        <td>178 billones</td>
+                        <td>Conversación, generación de texto</td>
+                        <td>Inglés</td>
+                    </tr>
+                    <tr>
+                        <td>LLaMA 2</td>
+                        <td>Variantes 7B-70B</td>
+                        <td>Investigación, aplicaciones comerciales</td>
+                        <td>Multilenguaje</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Did You Know Section -->
+        <section class="did-you-know container">
+            <h2 class="section-title">¿Sabías Que?</h2>
+            <div class="fun-facts">
+                <div class="fun-fact fade-in">
+                    <div class="fun-fact-icon">
+                        <i class="fas fa-infinity"></i>
+                    </div>
+                    <div class="fun-fact-content">
+                        <h3>El Teorema del Mono Infinito</h3>
+                        <p>Explora probabilísticamente cuánto tardaría un mono escribiendo aleatoriamente en producir una obra como "Hamlet" de Shakespeare.</p>
+                    </div>
+                </div>
+                
+                <div class="fun-fact fade-in delay-1">
+                    <div class="fun-fact-icon">
+                        <i class="fas fa-fish"></i>
+                    </div>
+                    <div class="fun-fact-content">
+                        <h3>Peces Ciegos Mexicanos</h3>
+                        <p>Los peces de cueva mexicanos que perdieron sus ojos podrían tener la clave para luchar contra la obesidad.</p>
+                    </div>
+                </div>
+                
+                <div class="fun-fact fade-in delay-2">
+                    <div class="fun-fact-icon">
+                        <i class="fas fa-dove"></i>
+                    </div>
+                    <div class="fun-fact-content">
+                        <h3>Loros que Aprenden</h3>
+                        <p>Los loros pueden imitar lo que otros de su especie aprenden, una habilidad solo vista antes en humanos.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="logo">Antonio <span>Soria</span></div>
+            <div class="footer-links">
+                <a href="index.html">Inicio</a>
+                <a href="sobre-mi.html">Sobre Mí</a>
+                <a href="portafolio.html">Portafolio</a>
+                <a href="divulgacion.html">Divulgación</a>
+                <a href="contacto.html">Contacto</a>
+            </div>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/antonio-sould-54627195" class="social-link" title="LinkedIn" target="_blank">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://github.com/PurppleAlien" class="social-link" title="GitHub" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.instagram.com/antoniosould/" class="social-link" title="Instagram" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="mailto:antonio.soria8r@gmail.com" class="social-link" title="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+            <div class="copyright">
+                &copy; 2023 Antonio Soria. Todos los derechos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPT CORREGIDO PARA EL MODO OSCURO -->
+    <script>
+        // Funcionalidad para el modo oscuro/claro - VERSIÓN CORREGIDA Y COMPLETA
+        document.addEventListener('DOMContentLoaded', function() {
+            const themeToggle = document.getElementById('theme-toggle');
+            
+            if (themeToggle) {
+                const icon = themeToggle.querySelector('i');
+                
+                // Verificar si hay una preferencia guardada
+                const savedTheme = localStorage.getItem('theme');
+                
+                // Aplicar el tema guardado o usar el del sistema como fallback
+                if (savedTheme === 'dark') {
+                    document.body.classList.add('dark-mode');
+                    if (icon) {
+                        icon.classList.remove('fa-moon');
+                        icon.classList.add('fa-sun');
+                    }
+                } else if (savedTheme === 'light') {
+                    document.body.classList.remove('dark-mode');
+                    if (icon) {
+                        icon.classList.remove('fa-sun');
+                        icon.classList.add('fa-moon');
+                    }
+                } else {
+                    // Si no hay preferencia guardada, verificar preferencia del sistema
+                    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                    if (prefersDark) {
+                        document.body.classList.add('dark-mode');
+                        if (icon) {
+                            icon.classList.remove('fa-moon');
+                            icon.classList.add('fa-sun');
+                        }
+                        localStorage.setItem('theme', 'dark');
+                    } else {
+                        document.body.classList.remove('dark-mode');
+                        if (icon) {
+                            icon.classList.remove('fa-sun');
+                            icon.classList.add('fa-moon');
+                        }
+                        localStorage.setItem('theme', 'light');
+                    }
+                }
+                
+                // Alternar modo oscuro/claro al hacer clic
+                themeToggle.addEventListener('click', function() {
+                    document.body.classList.toggle('dark-mode');
+                    
+                    if (document.body.classList.contains('dark-mode')) {
+                        localStorage.setItem('theme', 'dark');
+                        if (icon) {
+                            icon.classList.remove('fa-moon');
+                            icon.classList.add('fa-sun');
+                        }
+                    } else {
+                        localStorage.setItem('theme', 'light');
+                        if (icon) {
+                            icon.classList.remove('fa-sun');
+                            icon.classList.add('fa-moon');
+                        }
+                    }
+                    
+                    // Debug - opcional
+                    console.log('Tema cambiado a:', document.body.classList.contains('dark-mode') ? 'oscuro' : 'claro');
+                });
+            } else {
+                console.error('Botón de tema no encontrado');
+            }
+            
+            // Funcionalidad para animaciones al hacer scroll
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            if (fadeElements.length > 0) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.style.opacity = 1;
+                            entry.target.style.transform = 'translateY(0)';
+                        }
+                    });
+                }, { threshold: 0.1 });
+                
+                fadeElements.forEach(element => {
+                    element.style.opacity = 0;
+                    element.style.transform = 'translateY(20px)';
+                    element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    observer.observe(element);
+                });
+            }
+            
+            // Función para diagnosticar el tema (útil para depuración)
+            window.diagnoseTheme = function() {
+                console.log('=== DIAGNÓSTICO DEL TEMA ===');
+                console.log('Tema guardado en localStorage:', localStorage.getItem('theme'));
+                console.log('Clase dark-mode presente en body:', document.body.classList.contains('dark-mode'));
+                console.log('Preferencia del sistema (modo oscuro):', window.matchMedia('(prefers-color-scheme: dark)').matches);
+                console.log('Botón de tema encontrado:', !!document.getElementById('theme-toggle'));
+                console.log('==============================');
+                return 'Diagnóstico completado';
+            };
+            
+            // Ejecutar diagnóstico automático al cargar (opcional, comentar si no se quiere)
+            console.log('Diagnóstico automático:');
+            window.diagnoseTheme();
+        });
+    </script>
+</body>
+</html>
